@@ -1,0 +1,116 @@
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-icon.danger {
+  background: #e74c3c;
+}
+
+.btn-icon.success {
+  background: #2ecc71;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.active {
+  background: #e8f8f5;
+  color: #117864;
+}
+
+.status.inactive {
+  background: #fdecea;
+  color: #922b21;
+}
+
+/* MODALES */
+.modal {
+  display: none; /* JS lo cambiará a 'flex' */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999; /* Asegura que esté por encima de todo */
+  
+  /* Estas dos líneas son la clave para que el contenido no se estire */
+  align-items: center; 
+  justify-content: center;
+}
+
+/* Elimina el .modal:target, ya no lo necesitamos porque usamos JS */
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px; /* Evita que sea gigante en pantallas grandes */
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center; /* Centra el texto y botones */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Botón secundario/cancelar */
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-success {
+  background: #2ecc71;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+}

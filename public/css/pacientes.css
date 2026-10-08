@@ -1,0 +1,450 @@
+/* ================= ACCIONES SUPERIORES ================= */
+.form-actions {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+/* ================= SECCIÓN TABLA ================= */
+.table-section {
+  margin-top: 25px;
+}
+
+.table-section h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* ================= BOTONES DE TABLA ================= */
+.data-table button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* ================= MODALES ================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: none; /* luego con JS se muestra */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.modal-content.large {
+  width: 900px;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+/* ================= FORMULARIOS ================= */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ================= RADIO BUTTONS ================= */
+.modal label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal input[type="radio"] {
+  margin-right: 6px;
+}
+
+/* ================= BOTONES EN MODAL ================= */
+.modal .form-actions {
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .modal-content.large {
+    width: 95%;
+  }
+}
+
+/* Mostrar modal cuando es target */
+.modal:target {
+  display: flex;
+}
+
+
+
+/* Mostrar solo el modal seleccionado */
+.modal:target {
+  display: flex;
+}
+
+/* Cuando no hay target, ningún modal se muestra */
+.modal {
+  display: none;
+}
+#calendarExistente,
+#calendarNuevo {
+  margin-top: 15px;
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+}
+
+/* Estilos para que funcionen como modales reales sin anclas */
+    .custom-modal {
+        display: none; 
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0; width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .custom-modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 600px;
+        position: relative;
+    }
+    .custom-modal-content.large { max-width: 900px; max-height: 90vh; overflow-y: auto; }
+    .close-btn { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+
+    /* Asegura que el calendario tenga espacio suficiente */
+#calendarNuevo {
+    min-height: 400px;
+    margin-top: 10px;
+}
+
+/* Ajuste para los encabezados de FullCalendar en español */
+.fc-header-toolbar {
+    font-size: 0.85em;
+    margin-bottom: 1em !important;
+}
+
+.fc-button-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+}
+
+/* Estilo para que los botones de FullCalendar se vean bien */
+.fc .fc-button-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    text-transform: capitalize;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Resaltado para la fecha seleccionada (Punto 5) */
+[id^="info-fecha-"] {
+    background: #e0f2fe;
+    border-left: 4px solid #0284c7;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Estilos para validación en tiempo real */
+    .error-message {
+        color: #e11d48;
+        font-size: 0.75rem;
+        margin-top: 4px;
+        display: none;
+    }
+    .input-error {
+        border-color: #e11d48 !important;
+        background-color: #fff1f2 !important;
+    }
+    .input-success {
+        border-color: #10b981 !important;
+    }
+    /* Estilo para fecha seleccionada en calendario */
+    [id^="info-fecha-"] {
+        background: #e0f2fe;
+        border-left: 4px solid #0284c7;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .fc {
+    max-height: 500px;
+    font-size: 0.85rem;
+}
+
+.fc-toolbar-title {
+    font-size: 1.1rem !important;
+    text-transform: capitalize;
+}
+
+/* Resaltar que los días son clickeables */
+.fc-daygrid-day:hover, .fc-timegrid-slot:hover {
+    background-color: #f0f9ff !important;
+    cursor: pointer;
+}
+
+.fc-v-event { /* Estilo de eventos verticales (en vista de día) */
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+/* Asegura que los eventos en la vista de tiempo tengan prioridad visual */
+.fc-timegrid-event {
+    z-index: 10 !important;
+    opacity: 1 !important;
+    min-height: 20px; /* Para que citas muy cortas se alcancen a ver */
+}
+
+/* Colorear el fondo de la hora ocupada para que sea obvio */
+.fc-timegrid-event-inner {
+    background-color: #f87171 !important;
+}
+
+/* Estilo para que el texto de "OCUPADO" no se desborde */
+.fc-event-main {
+    padding: 2px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: none;
+}
+.input-error {
+    border-color: #dc3545 !important;
+}
+.input-success {
+    border-color: #198754 !important;
+}
+
+/* Estilo para los contenedores de texto largo */
+.form-group textarea.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #495057;
+    resize: vertical; /* Solo permite estirar hacia abajo */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    min-height: 100px;
+}
+
+/* Efecto cuando el doctor está escribiendo */
+.form-group textarea.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Placeholder más sutil */
+.form-group textarea.form-control::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Contenedor de las tarjetas */
+.selection-cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Estilo base de la tarjeta */
+.selection-card {
+    flex: 1;
+    background: #ffffff;
+    border: 2px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Efecto Hover (pasar el mouse) */
+.selection-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos circulares */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.selection-card h4 {
+    margin: 0 0 10px 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.selection-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .selection-cards-container {
+        flex-direction: column;
+    }
+}
+
+/* Esto corrige los botones amontonados de la parte superior del calendario */
+#calendarExistente .fc-toolbar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+}
+
+/* Esto corrige el cuerpo del calendario que se ve pequeño */
+#calendarExistente .fc-view-harness {
+    width: 100% !important;
+    display: block !important;
+}
+
+#calendarExistente .fc-scrollgrid {
+    width: 100% !important;
+}
+
+
+.badge-perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-perfil.menor {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+
+.badge-perfil.adulto {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+.data-table td {
+    vertical-align: middle;
+    padding: 12px 8px;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 400px; /* Tamaño ideal para que no abarque toda la pantalla */
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8; /* Gris azulado suave */
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Espacio extra a la izquierda para el icono */
+    font-size: 0.95rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px; /* Bordes redondeados modernos */
+    background-color: #ffffff;
+    color: #1e293b;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3b82f6; /* Color azul principal */
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); /* Efecto de resplandor sutil */
+    background-color: #fff;
+}
+
+/* Cambia el color del icono cuando el input tiene foco */
+.search-wrapper:focus-within .search-icon {
+    color: #3b82f6;
+}
+
+/* Estilo para el placeholder */
+.search-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.fc-event-title {
+        font-size: 0.85em !important;
+        font-weight: 500 !important;
+        white-space: normal !important; /* Permite que el nombre use dos renglones si es necesario */
+    }
+    .fc-event {
+        cursor: pointer;
+        border-radius: 4px !important;
+    }
